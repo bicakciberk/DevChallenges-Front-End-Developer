@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simpe Coffee Listing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="img/Star.svg" type="image/x-icon" />
+    <style>
+      .all-products.active {
+        background-color: #6f757c;
+      }
+      .available-now.active {
+        background-color: #6f757c;
+      }
+    </style>
+  </head>
+  <body class="relative flex items-center justify-center bg-black">
+    <header>
+      <img
+        class="absolute top-0 left-0 w-screen h-200px object-cover"
+        src="img/bg-cafe.jpg"
+        alt=""
+      />
+    </header>
+    <div
+      class="container z-10 bg-darkGray rounded-xl p-50px m-100px flex flex-col"
+    >
+      <header class="flex flex-col items-center justify-center relative">
+        <img
+          class="translate-x-1/2 absolute top-0"
+          src="img/vector.svg"
+          alt=""
+        />
+        <div class="content text-center z-10">
+          <h1 class="text-white mt-20px text-3xl font-semibold">
+            Our Collection
+          </h1>
+          <p class="text-lightGray mt-20px max-w-550px">
+            Introducing our Coffee Collection, a selection of unique coffees
+            from different roast types and origins, expertly roasted in small
+            batches and shipped fresh weekly.
+          </p>
+          <div class="btns my-20px">
+            <button
+              class="text-white text-sm font-medium p-10px rounded-xl all-products active"
+            >
+              All Products
+            </button>
+            <button
+              class="ml-5px text-white text-sm font-medium p-10px rounded-xl available-now"
+            >
+              Available Now
+            </button>
+          </div>
+        </div>
+      </header>
+      <div class="list grid grid-cols-4 items-center gap-4"></div>
+    </div>
+
+    <script src="app.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              darkGray: "#1B1D1F",
+              black: "#111315",
+              lightGray: "#6f757c",
+              lime: "#bee3cc",
+              white: "#fef7ee",
+              red: "#ed735d",
+              yellow: "#F6C768",
+            },
+            spacing: {
+              "5px": "5px",
+              "10px": "10px",
+              "20px": "20px",
+              "50px": "50px",
+              "100px": "100px",
+              "200px": "200px",
+            },
+            maxWidth: {
+              "260px": "260px",
+              "550px": "550px",
+            },
+          },
+        },
+      };
+    </script>
+  </body>
+</html>
