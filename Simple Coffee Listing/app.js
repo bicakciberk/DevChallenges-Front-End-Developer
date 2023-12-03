@@ -20,7 +20,7 @@ function getData() {
             alt=""
           />
           <div
-            class="txt bg-yellow text-black py-5px px-10px absolute top-10px left-10px rounded-xl text-sm ${
+            class=" bg-yellow text-black py-5px px-10px absolute top-10px left-10px rounded-xl text-sm 716px:text-xs ${
               child.popular ? "" : "hidden"
             }"
           >
@@ -31,7 +31,7 @@ function getData() {
           <header class="flex justify-between items-center">
             <p class="text-white">${child.name}</p>
             <div class="cost bg-lime rounded-xl">
-              <p class="py-5px px-10px text-sm text-black font-medium">
+              <p class="py-5px px-10px text-sm text-black font-medium 716px:text-xs">
               ${child.price}
               </p>
             </div>
@@ -39,12 +39,14 @@ function getData() {
           <header class="flex justify-between items-center mt-5px">
           <div class='flex items-center'>
             <img src="img/Star_fill.svg" alt="" />
-           <p class="font-medium text-sm text-white ml-5px">${child.rating}</p>
-           <p class="font-medium text-sm text-lightGray ml-5px">
+           <p class="font-medium text-sm text-white ml-5px 716px:text-xs">${
+             child.rating
+           }</p>
+           <p class="font-medium text-sm text-lightGray ml-5px 716px:text-xs">
              (${child.votes} votes)
            </p>
            </div>
-           <p class='text-sm text-red font-medium'>${
+           <p class='text-sm text-red font-medium 716px:text-xs'>${
              child.available ? "" : "Sold Out"
            }</p>
           </header>
@@ -53,8 +55,13 @@ function getData() {
         list.appendChild(item);
       });
       const x = list.children.length;
-      list.children[x - 1].classList.add("col-start-3");
-      list.children[x - 2].classList.add("col-start-2");
+      if (window.innerWidth > 1133) {
+        list.children[x - 1].classList.add("col-start-3");
+        list.children[x - 2].classList.add("col-start-2");
+      } else {
+        list.children[x - 1].classList.remove("col-start-3");
+        list.children[x - 2].classList.remove("col-start-2");
+      }
     });
 }
 getData();
